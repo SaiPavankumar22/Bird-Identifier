@@ -1,0 +1,44 @@
+{
+  "input_name": "mel",
+  "input_shape": [
+    1,
+    64,
+    259
+  ],
+  "output_name": "logits",
+  "n_classes": 5,
+  "arch": "tiny",
+  "model_params": 89333,
+  "label_map": {
+    "American Robin": 0,
+    "Dark-eyed Junco": 1,
+    "Mountain Chickadee": 2,
+    "Pine Siskin": 3,
+    "Song Sparrow": 4
+  },
+  "config": {
+    "sr": 22050,
+    "window_sec": 3.0,
+    "hop_sec": 1.0,
+    "n_mels": 64,
+    "fmin": 50.0,
+    "fmax": 8000.0,
+    "n_fft": 2048,
+    "hop_length": 256,
+    "win_length": 2048,
+    "rms_ratio_keep": 0.6,
+    "rms_hard_floor": 0.005,
+    "max_windows_per_file": 8,
+    "species": [
+      "American Robin",
+      "Dark-eyed Junco",
+      "Mountain Chickadee",
+      "Pine Siskin",
+      "Song Sparrow"
+    ],
+    "normalization": "per-window mean/std to ~0 mean, unit std (db-scaled mel)",
+    "note": "Windows are extracted from sound-containing portions of long field recordings. Each window is labeled by the species of its parent NPS recording.",
+    "arch": "tiny",
+    "model_params": 89333
+  }
+}

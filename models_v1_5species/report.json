@@ -1,0 +1,161 @@
+{
+  "seed": 73,
+  "split": "recording-level: one held-out recording per species",
+  "device": "cpu",
+  "arch": "tiny",
+  "epochs_run": 60,
+  "hyperparams": {
+    "epochs": 60,
+    "batch_size": 16,
+    "lr": 0.002,
+    "weight_decay": 0.0005,
+    "dropout": 0.5,
+    "label_smoothing": 0.0,
+    "mixup": 0.0,
+    "mask_scale": 1.0,
+    "mask_bands": 1,
+    "bg_mix": 0.0,
+    "balanced_sampler": false
+  },
+  "train_windows": 104,
+  "val_windows": 39,
+  "train_recordings": 13,
+  "val_recordings": 5,
+  "train_per_class": {
+    "American Robin": 16,
+    "Dark-eyed Junco": 16,
+    "Mountain Chickadee": 24,
+    "Pine Siskin": 40,
+    "Song Sparrow": 8
+  },
+  "val_per_class": {
+    "American Robin": 8,
+    "Dark-eyed Junco": 8,
+    "Mountain Chickadee": 8,
+    "Pine Siskin": 7,
+    "Song Sparrow": 8
+  },
+  "best_epoch_by_selection": 6,
+  "selection_metric": "val_loss",
+  "best_val_loss": 1.3889193473718104,
+  "best_selection_score": -1.3889193473718104,
+  "final_train_loss": 0.7624440835072444,
+  "final_train_acc": 0.7788461538461539,
+  "final_val_loss": 1.3889193473718104,
+  "final_val_acc": 0.4358974358974359,
+  "final_val_top5_acc": 1.0,
+  "final_val_macro_f1": 0.4200854700854701,
+  "species_val_top1_acc": 0.43589743971824646,
+  "species_val_top5_acc": 1.0,
+  "species_val_macro_f1": 0.4200854700854701,
+  "bird_vs_nobird_auc": NaN,
+  "confusion_matrix": [
+    [
+      8,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      6,
+      1,
+      0,
+      1
+    ]
+  ],
+  "confusion_matrix_formatted": "true\\predAmerican RobinDark-eyed JuncoMountain Chickadee Pine SiskinSong Sparrow\nAmerican Robin           8           0           0           0           0\nDark-eyed Junco           0           0           8           0           0\nMountain Chickadee           0           0           5           3           0\n Pine Siskin           0           2           2           3           0\nSong Sparrow           0           6           1           0           1",
+  "per_class": {
+    "American Robin": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "Dark-eyed Junco": {
+      "support": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Mountain Chickadee": {
+      "support": 8,
+      "precision": 0.3125,
+      "recall": 0.625,
+      "f1": 0.4166666666666667
+    },
+    "Pine Siskin": {
+      "support": 7,
+      "precision": 0.5,
+      "recall": 0.42857142857142855,
+      "f1": 0.4615384615384615
+    },
+    "Song Sparrow": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 0.125,
+      "f1": 0.2222222222222222
+    }
+  },
+  "model_params": 89333,
+  "config": {
+    "sr": 22050,
+    "window_sec": 3.0,
+    "hop_sec": 1.0,
+    "n_mels": 64,
+    "fmin": 50.0,
+    "fmax": 8000.0,
+    "n_fft": 2048,
+    "hop_length": 256,
+    "win_length": 2048,
+    "rms_ratio_keep": 0.6,
+    "rms_hard_floor": 0.005,
+    "max_windows_per_file": 8,
+    "species": [
+      "American Robin",
+      "Dark-eyed Junco",
+      "Mountain Chickadee",
+      "Pine Siskin",
+      "Song Sparrow"
+    ],
+    "normalization": "per-window mean/std to ~0 mean, unit std (db-scaled mel)",
+    "note": "Windows are extracted from sound-containing portions of long field recordings. Each window is labeled by the species of its parent NPS recording."
+  },
+  "label_map": {
+    "American Robin": 0,
+    "Dark-eyed Junco": 1,
+    "Mountain Chickadee": 2,
+    "Pine Siskin": 3,
+    "Song Sparrow": 4
+  },
+  "idx_map": {
+    "0": "American Robin",
+    "1": "Dark-eyed Junco",
+    "2": "Mountain Chickadee",
+    "3": "Pine Siskin",
+    "4": "Song Sparrow"
+  },
+  "note": "Numbers are indicative given the small, unbalanced, single-area dataset. Validation is on held-out recordings, not held-out windows from seen recordings."
+}

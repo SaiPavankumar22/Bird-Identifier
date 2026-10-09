@@ -1,0 +1,46 @@
+# This repository publishes only what is needed to RUN the identifier: the CLI,
+# the field log, and the two publishable models (v1, v4). Everything else in the
+# working folder -- training code, datasets, evaluation, reports, the HuggingFace
+# staging tree (release/), and the v2/v3 models trained on CC BY-NC-ND / BY-NC-SA
+# audio -- stays local. Allow-list: ignore all, then re-include what ships.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/src/
+!/tools/
+!/models_v1_5species/
+!/models_v4/
+
+/src/*
+!/src/identify.py
+!/src/model.py
+!/src/perch_v3.py
+
+/tools/*
+!/tools/__init__.py
+!/tools/field_log.py
+!/tools/train_head.py
+
+# Frozen Perch 2.0 backbone (413 MB, Apache-2.0): over GitHub's 100 MB per-file
+# limit. Download instructions are in README.md.
+perch_v2_no_dft.onnx
+
+# Per-user local field log
+field_log.sqlite
+field_log.jsonl
+field_log.json
+
+# Secrets
+.env
+
+# Python / OS / IDE artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

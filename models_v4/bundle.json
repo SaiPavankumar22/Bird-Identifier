@@ -1,0 +1,31 @@
+{
+  "backbone": "Perch 2.0 (Google) via justinchuby/Perch-onnx",
+  "backbone_licence": "Apache-2.0",
+  "backbone_file": "perch_v2_no_dft.onnx",
+  "input": {
+    "sample_rate_hz": 32000,
+    "window_sec": 5.0,
+    "hop_sec": 2.5,
+    "feature": "Perch embedding, 1536-d, L2-normalised per clip"
+  },
+  "species_head": "linear-cosine",
+  "n_classes": 93,
+  "n_training_clips": 16591,
+  "n_frozen_held_out": 65,
+  "class_weight_alpha": 1.0,
+  "metrics": {
+    "linear-cosine": 0.8457536916387927,
+    "linear": 0.7683880201718031,
+    "mlp1": 0.7968710474781021,
+    "mlp2": 0.7818056113964551
+  },
+  "binary_head_auc": {
+    "auc_mean": 0.946195485178178,
+    "auc_std": 0.0017283837268795396,
+    "folds": [
+      0.9486,
+      0.9455,
+      0.9445
+    ]
+  }
+}

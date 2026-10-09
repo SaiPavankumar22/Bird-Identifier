@@ -1,0 +1,11 @@
+# Runtime dependencies for the offline bird call identifier (CPU-only is fine).
+
+# v4 heads (Perch) and the v1 CNN's PyTorch fallback
+torch>=2.0
+
+# Audio loading and resampling. librosa pulls soundfile, audioread, numba, etc.
+# Put ffmpeg on PATH for .mp3 / .m4a input.
+librosa>=0.10
+
+# Runs the Perch 2.0 backbone and the v1 ONNX model
+onnxruntime>=1.15
